@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabin Dangol | Full Stack Developer & ML Enthusiast</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Devicon for technology logos -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgMain: '#000000',
+                        bgSurface: '#0d0d0d', /* Elevated dark surface */
+                        accent: '#00ff41', /* Neon Matrix Green */
+                        textMain: '#d4d4d8', /* Zinc-300 */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-bgMain text-textMain font-sans antialiased selection:bg-accent selection:text-bgMain overflow-x-hidden">
+    <!-- Background dot grid & subtle ambient glow -->
+    <div class="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-bgSurface/40 via-bgMain to-bgMain"></div>
+    <div class="fixed inset-0 z-[-1] bg-dot-pattern opacity-10"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white tracking-tighter hover:text-accent transition-colors">
+                <span class="text-accent">&lt;</span>Sabin<span class="text-accent">/&gt;</span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center space-x-6 xl:space-x-8 font-mono text-sm">
+                <a href="#about" class="nav-link hover:text-accent transition-colors py-1">01. About</a>
+                <a href="#education" class="nav-link hover:text-accent transition-colors py-1">02. Education</a>
+                <a href="#skills" class="nav-link hover:text-accent transition-colors py-1">03. Skills</a>
+                <a href="#projects" class="nav-link hover:text-accent transition-colors py-1">04. Projects</a>
+                <a href="#certifications" class="nav-link hover:text-accent transition-colors py-1">05. Certifications</a>
+                <a href="#contact" class="nav-link hover:text-accent transition-colors py-1">06. Contact</a>
+                <a href="assets/resume/sabin-dangol-cv.pdf" class="px-4 py-2 border border-accent text-accent rounded hover:bg-accent/10 transition-all duration-200" target="_blank">Resume</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-2xl text-textMain hover:text-accent focus:outline-none p-2" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Drawer -->
+        <div class="lg:hidden fixed inset-x-0 top-[72px] bg-bgSurface/95 backdrop-blur-xl border-b border-white/10 flex flex-col items-center py-8 space-y-6 font-mono text-sm transform -translate-y-full opacity-0 pointer-events-none transition-all duration-300 shadow-2xl z-40" id="mobile-menu">
+            <a href="#about" class="mobile-link hover:text-accent transition-colors">01. About</a>
+            <a href="#education" class="mobile-link hover:text-accent transition-colors">02. Education</a>
+            <a href="#skills" class="mobile-link hover:text-accent transition-colors">03. Skills</a>
+            <a href="#projects" class="mobile-link hover:text-accent transition-colors">04. Projects</a>
+            <a href="#certifications" class="mobile-link hover:text-accent transition-colors">05. Certifications</a>
+            <a href="#contact" class="mobile-link hover:text-accent transition-colors">06. Contact</a>
+            <a href="assets/resume/sabin-dangol-cv.pdf" class="px-6 py-2.5 border border-accent text-accent rounded hover:bg-accent/10 transition-colors" target="_blank">Resume</a>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-[90vh] flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-between py-16 lg:py-24 gap-10 lg:gap-12" data-aos="fade-up" data-aos-duration="1000">
+            <div class="flex-1 text-center lg:text-left">
+                <p class="font-mono text-accent mb-3 text-sm md:text-base">Hi, my name is</p>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-3 tracking-tight">Sabin Dangol.</h1>
+                <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-slate-400 mb-6 tracking-tight">I build things for the web.</h2>
+                <p class="text-base sm:text-lg lg:text-xl max-w-2xl mb-8 text-textMain leading-relaxed mx-auto lg:mx-0">
+                    Full Stack MERN Developer & Machine Learning Enthusiast.
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4 font-mono text-sm">
+                    <a href="#projects" class="px-6 py-3.5 bg-accent text-bgMain font-semibold rounded hover:bg-green-400 hover:shadow-[0_0_20px_rgba(0,255,65,0.5)] transition-all duration-300">
+                        View Projects
+                    </a>
+                    <a href="assets/resume/sabin-dangol-cv.pdf" target="_blank" class="px-6 py-3.5 border border-accent text-accent font-semibold rounded hover:bg-accent/10 transition-all duration-300">
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex justify-center shrink-0">
+                <!-- Circular Profile Photo with Running Neon Light -->
+                <div class="neon-border w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 shadow-[0_0_40px_rgba(0,255,65,0.2)]">
+                    <div class="neon-inner">
+                        <img src="assets/images/profile-placeholder.png" alt="Sabin Dangol" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-28" data-aos="fade-up">
+            <div class="flex items-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-white font-mono"><span class="text-accent text-xl md:text-2xl">01.</span> About Me</h2>
+                <div class="h-px bg-white/10 flex-grow ml-6 max-w-xs"></div>
+            </div>
+            <div class="space-y-4 text-base md:text-lg leading-relaxed text-slate-300 max-w-4xl">
+                <p>
+                    I'm a passionate full stack MERN developer with a strong fascination for machine learning and data-driven problem solving. I thrive on building end-to-end web applications that are not only robust and scalable but also provide seamless, intuitive user experiences.
+                </p>
+                <p>
+                    Whether I'm designing complex backend architectures or crafting sleek frontend interfaces, I bring a detail-oriented and analytical approach to every project. Beyond web development, I am constantly exploring ML models, eager to discover new ways to leverage data for intelligent and innovative solutions.
+                </p>
+                <p>
+                    My goal is to continuously grow as an engineer, combining modern web technologies with artificial intelligence to create software that truly makes an impact.
+                </p>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 md:py-28" data-aos="fade-up">
+            <div class="flex items-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-white font-mono"><span class="text-accent text-xl md:text-2xl">02.</span> Education</h2>
+                <div class="h-px bg-white/10 flex-grow ml-6 max-w-xs"></div>
+            </div>
+            
+            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-6 space-y-12">
+                
+                <!-- School -->
+                <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="0">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 bg-bgMain border-2 border-slate-500 rounded-full"></div>
+                    <div class="bg-bgSurface p-6 rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 shadow-lg">
+                        <span class="font-mono text-xs text-slate-400 block mb-2 uppercase tracking-wider">School</span>
+                        <h3 class="text-xl font-bold text-white mb-1">Landmark Academy</h3>
+                        <p class="text-accent font-mono font-medium mt-2 text-sm">GPA: 3.65</p>
+                    </div>
+                </div>
+
+                <!-- Higher Secondary -->
+                <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 bg-bgMain border-2 border-slate-500 rounded-full"></div>
+                    <div class="bg-bgSurface p-6 rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 shadow-lg">
+                        <span class="font-mono text-xs text-slate-400 block mb-2 uppercase tracking-wider">+2 (Higher Secondary)</span>
+                        <h3 class="text-xl font-bold text-white mb-1">Bluebird</h3>
+                        <p class="text-accent font-mono font-medium mt-2 text-sm">GPA: 3.20</p>
+                    </div>
+                </div>
+
+                <!-- Undergraduate -->
+                <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Glowing Node for in-progress -->
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 bg-accent rounded-full shadow-[0_0_12px_#00ff41] animate-pulse"></div>
+                    <div class="bg-bgSurface p-6 rounded-xl border border-accent/30 shadow-[0_4px_20px_rgba(0,255,65,0.1)] relative overflow-hidden group">
+                        <!-- subtle ambient highlight -->
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-accent opacity-5 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2 group-hover:opacity-10 transition-opacity"></div>
+                        <span class="font-mono text-xs text-accent block mb-2 uppercase tracking-wider">Undergraduate</span>
+                        <h3 class="text-xl font-bold text-white mb-1">BIT (Bachelor in Information Technology)</h3>
+                        <p class="text-slate-400 mt-2 text-sm">Expected completion: <span class="text-white font-medium">2027</span></p>
+                        <div class="mt-4 inline-block px-3 py-1 bg-accent/10 border border-accent/30 text-accent text-xs font-mono rounded-full font-semibold">
+                            In Progress
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 md:py-28" data-aos="fade-up">
+            <div class="flex items-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-white font-mono"><span class="text-accent text-xl md:text-2xl">03.</span> Skills</h2>
+                <div class="h-px bg-white/10 flex-grow ml-6 max-w-xs"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="bg-bgSurface p-6 rounded-xl border border-white/5 hover:border-accent/30 hover:-translate-y-1.5 transition-all duration-300 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <i class="fa-solid fa-laptop-code text-2xl text-accent mr-3"></i>
+                        <h3 class="text-xl font-semibold text-white">Frontend</h3>
+                    </div>
+                    <ul class="space-y-5">
+                        <li>
+                            <div class="flex justify-between items-center mb-1.5 text-sm font-mono text-slate-300">
+                                <span class="flex items-center gap-2"><i class="devicon-react-original colored text-lg"></i> React</span>
+                            </div>
+                            <div class="w-full bg-bgMain rounded-full h-2 border border-white/5">
+                                <div class="bg-accent h-2 rounded-full shadow-[0_0_8px_rgba(0,255,65,0.6)]" style="width: 85%"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between items-center mb-1.5 text-sm font-mono text-slate-300">
+                                <span class="flex items-center gap-1.5"><i class="devicon-html5-plain colored text-lg"></i><i class="devicon-css3-plain colored text-lg"></i><i class="devicon-tailwindcss-original colored text-lg"></i> HTML, CSS & Tailwind</span>
+                            </div>
+                            <div class="w-full bg-bgMain rounded-full h-2 border border-white/5">
+                                <div class="bg-accent h-2 rounded-full shadow-[0_0_8px_rgba(0,255,65,0.6)]" style="width: 90%"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between items-center mb-1.5 text-sm font-mono text-slate-300">
+                                <span class="flex items-center gap-2"><i class="devicon-javascript-plain colored text-lg"></i> JavaScript</span>
+                            </div>
+                            <div class="w-full bg-bgMain rounded-full h-2 border border-white/5">
+                                <div class="bg-accent h-2 rounded-full shadow-[0_0_8px_rgba(0,255,65,0.6)]" style="width: 85%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Backend -->
+                <div class="bg-bgSurface p-6 rounded-xl border border-white/5 hover:border-accent/30 hover:-translate-y-1.5 transition-all duration-300 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <i class="fa-solid fa-server text-2xl text-accent mr-3"></i>
+                        <h3 class="text-xl font-semibold text-white">Backend</h3>
+                    </div>
+                    <ul class="space-y-5">
+                        <li>
+                            <div class="flex justify-between items-center mb-1.5 text-sm font-mono text-slate-300">
+                                <span class="flex items-center gap-2"><i class="devicon-nodejs-plain colored text-lg"></i> Node.js</span>
+                            </div>
+                            <div class="w-full bg-bgMain rounded-full h-2 border border-white/5">
+                                <div class="bg-accent h-2 rounded-full shadow-[0_0_8px_rgba(0,255,65,0.6)]" style="width: 80%"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between items-center mb-1.5 text-sm font-mono text-slate-300">
+                                <span class="flex items-center gap-2"><i class="devicon-express-original text-lg text-slate-200"></i> Express</span>
+                            </div>
+                            <div class="w-full bg-bgMain rounded-full h-2 border border-white/5">
+                                <div class="bg-accent h-2 rounded-full shadow-[0_0_8px_rgba(0,255,65,0.6)]" style="width: 80%"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between items-center mb-1.5 text-sm font-mono text-slate-300">
+                                <span class="flex items-center gap-2"><i class="devicon-mongodb-plain colored text-lg"></i> MongoDB</span>
+                            </div>
+                            <div class="w-full bg-bgMain rounded-full h-2 border border-white/5">
+                                <div class="bg-accent h-2 rounded-full shadow-[0_0_8px_rgba(0,255,65,0.6)]" style="width: 75%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Languages -->
+                <div class="bg-bgSurface p-6 rounded-xl border border-white/5 hover:border-accent/30 hover:-translate-y-1.5 transition-all duration-300 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <i class="fa-solid fa-code text-2xl text-accent mr-3"></i>
+                        <h3 class="text-xl font-semibold text-white">Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2.5 bg-bgMain border border-white/10 rounded-full text-sm font-mono text-slate-300 flex items-center gap-2 hover:border-accent/50 hover:text-accent hover:shadow-[0_0_10px_rgba(0,255,65,0.3)] transition-all duration-200 cursor-default">
+                            <i class="devicon-javascript-plain colored text-lg"></i> JavaScript
+                        </span>
+                        <span class="px-4 py-2.5 bg-bgMain border border-white/10 rounded-full text-sm font-mono text-slate-300 flex items-center gap-2 hover:border-accent/50 hover:text-accent hover:shadow-[0_0_10px_rgba(0,255,65,0.3)] transition-all duration-200 cursor-default">
+                            <i class="devicon-java-plain colored text-lg"></i> Java
+                        </span>
+                        <span class="px-4 py-2.5 bg-bgMain border border-white/10 rounded-full text-sm font-mono text-slate-300 flex items-center gap-2 hover:border-accent/50 hover:text-accent hover:shadow-[0_0_10px_rgba(0,255,65,0.3)] transition-all duration-200 cursor-default">
+                            <i class="devicon-cplusplus-plain colored text-lg"></i> C++
+                        </span>
+                        <span class="px-4 py-2.5 bg-bgMain border border-white/10 rounded-full text-sm font-mono text-slate-300 flex items-center gap-2 hover:border-accent/50 hover:text-accent hover:shadow-[0_0_10px_rgba(0,255,65,0.3)] transition-all duration-200 cursor-default">
+                            <i class="devicon-csharp-plain colored text-lg"></i> C#
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 md:py-28" data-aos="fade-up">
+            <div class="flex items-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-white font-mono"><span class="text-accent text-xl md:text-2xl">04.</span> Some Things I've Built</h2>
+                <div class="h-px bg-white/10 flex-grow ml-6 max-w-xs"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="group relative bg-bgSurface rounded-xl p-6 border border-white/5 hover:border-accent/40 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full shadow-xl hover:shadow-[0_0_20px_rgba(0,255,65,0.15)]">
+                    <div class="flex justify-between items-center mb-6">
+                        <i class="fa-regular fa-folder text-4xl text-accent"></i>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-slate-400 hover:text-accent transition-colors text-xl p-1" title="GitHub Repository" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="text-slate-400 hover:text-accent transition-colors text-xl p-1" title="Live Demo" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors"><a href="#">Project One</a></h3>
+                    <p class="text-sm mb-6 flex-grow text-slate-400 leading-relaxed">
+                        A comprehensive web application designed to solve complex data management problems with an intuitive user interface and robust backend architecture.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full font-mono text-xs text-accent">React</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full font-mono text-xs text-accent">Node.js</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full font-mono text-xs text-accent">MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative bg-bgSurface rounded-xl p-6 border border-white/5 hover:border-accent/40 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full shadow-xl hover:shadow-[0_0_20px_rgba(0,255,65,0.15)]">
+                    <div class="flex justify-between items-center mb-6">
+                        <i class="fa-regular fa-folder text-4xl text-accent"></i>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-slate-400 hover:text-accent transition-colors text-xl p-1" title="GitHub Repository" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="text-slate-400 hover:text-accent transition-colors text-xl p-1" title="Live Demo" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors"><a href="#">Project Two</a></h3>
+                    <p class="text-sm mb-6 flex-grow text-slate-400 leading-relaxed">
+                        An innovative platform that integrates real-time data processing and analytics, providing actionable insights through rich visualizations.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full font-mono text-xs text-accent">Express</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full font-mono text-xs text-accent">Java</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full font-mono text-xs text-accent">Tailwind</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative bg-bgSurface rounded-xl p-6 border border-white/5 hover:border-accent/40 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full shadow-xl hover:shadow-[0_0_20px_rgba(0,255,65,0.15)]">
+                    <div class="flex justify-between items-center mb-6">
+                        <i class="fa-regular fa-folder text-4xl text-accent"></i>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-slate-400 hover:text-accent transition-colors text-xl p-1" title="GitHub Repository" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="text-slate-400 hover:text-accent transition-colors text-xl p-1" title="Live Demo" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors"><a href="#">Project Three</a></h3>
+                    <p class="text-sm mb-6 flex-grow text-slate-400 leading-relaxed">
+                        A full-stack solution featuring seamless authentication, responsive design, and integration with intelligent machine learning APIs.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full font-mono text-xs text-accent">React</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full font-mono text-xs text-accent">C++</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full font-mono text-xs text-accent">Python (ML)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20 md:py-28" data-aos="fade-up">
+            <div class="flex items-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-white font-mono"><span class="text-accent text-xl md:text-2xl">05.</span> Certifications</h2>
+                <div class="h-px bg-white/10 flex-grow ml-6 max-w-xs"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 max-w-4xl mx-auto gap-8">
+                <!-- Certificate 1 -->
+                <div class="group relative bg-bgSurface rounded-xl overflow-hidden border border-white/10 hover:border-accent/50 transition-all duration-300 shadow-xl hover:shadow-[0_0_25px_rgba(0,255,65,0.15)] flex flex-col">
+                    <div class="aspect-video overflow-hidden bg-black/40 relative">
+                        <img src="assets/certificates/coursera-a4xs8r2s64pq.png" alt="Coursera Certificate A4XS8R2S64PQ" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-bold text-white group-hover:text-accent transition-colors">Coursera Certificate</h3>
+                                <a href="assets/certificates/Coursera%20A4XS8R2S64PQ.pdf" target="_blank" class="text-slate-400 hover:text-accent transition-colors p-1" title="View PDF" aria-label="View PDF">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                            <p class="text-xs text-slate-400 font-mono">ID: A4XS8R2S64PQ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="group relative bg-bgSurface rounded-xl overflow-hidden border border-white/10 hover:border-accent/50 transition-all duration-300 shadow-xl hover:shadow-[0_0_25px_rgba(0,255,65,0.15)] flex flex-col">
+                    <div class="aspect-video overflow-hidden bg-black/40 relative">
+                        <img src="assets/certificates/coursera-jkhb7ahgqjmp.png" alt="Coursera Certificate JKHB7AHGQJMP" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-bold text-white group-hover:text-accent transition-colors">Coursera Certificate</h3>
+                                <a href="assets/certificates/Coursera%20JKHB7AHGQJMP.pdf" target="_blank" class="text-slate-400 hover:text-accent transition-colors p-1" title="View PDF" aria-label="View PDF">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                            <p class="text-xs text-slate-400 font-mono">ID: JKHB7AHGQJMP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-28 md:py-36 text-center max-w-2xl mx-auto" data-aos="fade-up">
+            <h2 class="font-mono text-accent mb-3 text-sm md:text-base"><span class="text-sm">06.</span> What's Next?</h2>
+            <h3 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Get In Touch</h3>
+            <p class="text-base md:text-lg mb-10 text-slate-300 leading-relaxed">
+                I'm currently looking for new opportunities. Whether you have a question, a project idea, or just want to say hi, I'll try my best to get back to you!
+            </p>
+            <a href="mailto:sabindangol440@gmail.com" class="inline-block px-8 py-4 font-mono text-sm border-2 border-accent text-accent font-semibold rounded hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)] transition-all duration-300">
+                Say Hello
+            </a>
+            
+            <div class="flex justify-center space-x-8 mt-16 text-2xl">
+                <a href="#" class="text-slate-400 hover:text-accent transition-colors hover:-translate-y-1 transform inline-block p-1" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-slate-400 hover:text-accent transition-colors hover:-translate-y-1 transform inline-block p-1" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-sm text-slate-500 font-mono border-t border-white/5">
+        <p>&copy; <span id="year"></span> Sabin Dangol. Built with HTML, CSS & JS.</p>
+    </footer>
+
+    <!-- AOS JS for scroll animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Certificate image placeholder</title>
+  <desc id="desc">A placeholder for attaching a certificate image.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset=".48" stop-color="#ecfeff"/>
+      <stop offset="1" stop-color="#fff7ed"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" x2="1">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset=".5" stop-color="#fda4af"/>
+      <stop offset="1" stop-color="#fcd34d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" rx="44" fill="url(#bg)"/>
+  <rect x="70" y="70" width="1060" height="610" rx="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="6"/>
+  <rect x="135" y="132" width="930" height="12" rx="6" fill="url(#line)"/>
+  <g transform="translate(520 245)">
+    <rect width="160" height="160" rx="34" fill="#0f172a"/>
+    <path d="M80 42a34 34 0 1 0 0 68 34 34 0 0 0 0-68Zm0 18a16 16 0 1 1 0 32 16 16 0 0 1 0-32Z" fill="#5eead4"/>
+    <path d="M60 104v44l20-12 20 12v-44" fill="none" stroke="#5eead4" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="600" y="492" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800" text-anchor="middle">Certificate Photo</text>
+  <text x="600" y="552" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" text-anchor="middle">Replace this SVG with your certificate image</text>
+</svg>
