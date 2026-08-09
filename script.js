@@ -91,6 +91,8 @@ const modalDescription = document.getElementById('modal-description');
 const modalFeatures = document.getElementById('modal-features');
 const modalTags = document.getElementById('modal-tags');
 const modalOpenLink = document.getElementById('modal-open-link');
+const modalDemoLink = document.getElementById('modal-demo-link');
+const modalGithubLink = document.getElementById('modal-github-link');
 
 // Function to open modal with project data
 function openProjectModal(card) {
@@ -99,7 +101,8 @@ function openProjectModal(card) {
     const category = card.dataset.category || 'Project';
     const image = card.dataset.image || '';
     const fullDesc = card.dataset.fullDesc || card.dataset.description || '';
-    const githubUrl = card.dataset.github || card.dataset.demo || '#';
+    const githubUrl = card.dataset.github || '';
+    const demoUrl = card.dataset.demo || '';
     
     let features = [];
     try {
@@ -124,7 +127,31 @@ function openProjectModal(card) {
     modalSubtitle.textContent = subtitle;
     modalCategory.querySelector('span').textContent = category;
     modalDescription.textContent = fullDesc;
-    modalOpenLink.href = githubUrl;
+
+    // Handle Modal Links
+    const hasDemo = demoUrl && demoUrl !== '#';
+    const hasGithub = githubUrl && githubUrl !== '#';
+
+    if (modalDemoLink && modalGithubLink) {
+        if (hasDemo) {
+            modalDemoLink.href = demoUrl;
+            modalDemoLink.classList.remove('hidden');
+        } else {
+            modalDemoLink.classList.add('hidden');
+        }
+
+        if (hasGithub) {
+            modalGithubLink.href = githubUrl;
+            modalGithubLink.classList.remove('hidden');
+        } else {
+            modalGithubLink.classList.add('hidden');
+        }
+
+        if (modalOpenLink) modalOpenLink.classList.add('hidden');
+    } else if (modalOpenLink) {
+        modalOpenLink.href = hasDemo ? demoUrl : (hasGithub ? githubUrl : '#');
+        modalOpenLink.classList.remove('hidden');
+    }
 
     // Handle Banner Image
     if (image) {
