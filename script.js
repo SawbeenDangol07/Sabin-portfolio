@@ -76,3 +76,127 @@ function highlightNavOnScroll() {
 }
 
 window.addEventListener('scroll', highlightNavOnScroll);
+
+// Glassmorphic Project Details Modal Logic
+const projectModal = document.getElementById('project-modal');
+const modalBackdrop = document.getElementById('modal-backdrop');
+const modalClose = document.getElementById('modal-close');
+const modalCloseBtn = document.getElementById('modal-close-btn');
+const modalTitle = document.getElementById('modal-title');
+const modalSubtitle = document.getElementById('modal-subtitle');
+const modalCategory = document.getElementById('modal-category');
+const modalImageContainer = document.getElementById('modal-image-container');
+const modalImage = document.getElementById('modal-image');
+const modalDescription = document.getElementById('modal-description');
+const modalFeatures = document.getElementById('modal-features');
+const modalTags = document.getElementById('modal-tags');
+const modalOpenLink = document.getElementById('modal-open-link');
+
+// Function to open modal with project data
+function openProjectModal(card) {
+    const title = card.dataset.title || 'Project Details';
+    const subtitle = card.dataset.subtitle || '';
+    const category = card.dataset.category || 'Project';
+    const image = card.dataset.image || '';
+    const fullDesc = card.dataset.fullDesc || card.dataset.description || '';
+    const githubUrl = card.dataset.github || card.dataset.demo || '#';
+    
+    let features = [];
+    try {
+        if (card.dataset.features) {
+            features = JSON.parse(card.dataset.features);
+        }
+    } catch (e) {
+        console.error("Error parsing features data:", e);
+    }
+
+    let tags = [];
+    try {
+        if (card.dataset.tags) {
+            tags = JSON.parse(card.dataset.tags);
+        }
+    } catch (e) {
+        console.error("Error parsing tags data:", e);
+    }
+
+    // Populate modal content
+    modalTitle.textContent = title;
+    modalSubtitle.textContent = subtitle;
+    modalCategory.querySelector('span').textContent = category;
+    modalDescription.textContent = fullDesc;
+    modalOpenLink.href = githubUrl;
+
+    // Handle Banner Image
+    if (image) {
+        modalImage.src = image;
+        modalImage.alt = title;
+        modalImageContainer.classList.remove('hidden');
+    } else {
+        modalImageContainer.classList.add('hidden');
+    }
+
+    // Render Features
+    modalFeatures.innerHTML = '';
+    if (features && features.length > 0) {
+        features.forEach(feat => {
+            const li = document.createElement('li');
+            li.className = 'flex items-start gap-2.5 leading-relaxed';
+            li.innerHTML = `<span class="text-accent text-sm mt-0.5">•</span><span>${feat}</span>`;
+            modalFeatures.appendChild(li);
+        });
+        modalFeatures.parentElement.classList.remove('hidden');
+    } else {
+        modalFeatures.parentElement.classList.add('hidden');
+    }
+
+    // Render Tags
+    modalTags.innerHTML = '';
+    if (tags && tags.length > 0) {
+        tags.forEach(tag => {
+            const span = document.createElement('span');
+            span.className = 'px-3 py-1.5 bg-bgMain border border-white/10 rounded-xl font-mono text-xs text-emerald-400 font-medium';
+            span.textContent = tag;
+            modalTags.appendChild(span);
+        });
+    }
+
+    // Show modal with animation
+    projectModal.classList.add('modal-active');
+    projectModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('overflow-hidden');
+}
+
+// Function to close modal
+function closeProjectModal() {
+    projectModal.classList.remove('modal-active');
+    projectModal.setAttribute('aria-hidden', 'true');
+    
+    // Only remove overflow-hidden if mobile menu is not active
+    if (!mobileMenu.classList.contains('menu-open')) {
+        document.body.classList.remove('overflow-hidden');
+    }
+}
+
+// Attach event listeners to project cards
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+        // Don't open modal if direct card-link icons (like GitHub or external link) were clicked
+        if (e.target.closest('.card-link')) {
+            return;
+        }
+        openProjectModal(card);
+    });
+});
+
+// Modal close event listeners
+if (modalClose) modalClose.addEventListener('click', closeProjectModal);
+if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeProjectModal);
+if (modalBackdrop) modalBackdrop.addEventListener('click', closeProjectModal);
+
+// Close on Escape key press
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && projectModal.classList.contains('modal-active')) {
+        closeProjectModal();
+    }
+});
+
