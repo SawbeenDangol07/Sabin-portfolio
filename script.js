@@ -181,7 +181,7 @@ function openProjectModal(card) {
     if (tags && tags.length > 0) {
         tags.forEach(tag => {
             const span = document.createElement('span');
-            span.className = 'px-3 py-1.5 bg-bgMain border border-white/10 rounded-xl font-mono text-xs text-emerald-400 font-medium';
+            span.className = 'px-3 py-1.5 bg-bgMain border border-white/10 rounded-xl font-mono text-xs text-purple-400 font-medium';
             span.textContent = tag;
             modalTags.appendChild(span);
         });
@@ -226,4 +226,55 @@ document.addEventListener('keydown', (e) => {
         closeProjectModal();
     }
 });
+
+// Contact Form Submission Handler
+const contactForm = document.getElementById('contact-form');
+const contactFeedback = document.getElementById('contact-feedback');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById('contact-name').value.trim();
+        const email = document.getElementById('contact-email').value.trim();
+        const subject = document.getElementById('contact-subject').value.trim() || 'Portfolio Contact Inquiry';
+        const message = document.getElementById('contact-message').value.trim();
+        const submitBtn = document.getElementById('contact-submit-btn');
+
+        if (!name || !email || !message) {
+            if (contactFeedback) {
+                contactFeedback.className = 'p-3.5 rounded-xl text-center text-xs font-mono border bg-rose-500/10 border-rose-500/30 text-rose-400 block';
+                contactFeedback.textContent = 'Please fill out all required fields.';
+            }
+            return;
+        }
+
+        // Show sending state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span>Sending...</span><i class="fa-solid fa-spinner animate-spin text-xs"></i>`;
+
+        setTimeout(() => {
+            // Display success message
+            if (contactFeedback) {
+                contactFeedback.className = 'p-3.5 rounded-xl text-center text-xs font-mono border bg-emerald-500/10 border-emerald-500/30 text-emerald-400 block';
+                contactFeedback.textContent = '✨ Thank you! Your message has been sent. I will get back to you shortly!';
+            }
+            
+            // Trigger mailto fallback so user can send direct email
+            const mailtoUri = `mailto:sabindangol440@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hi Sabin,\n\n${message}\n\nFrom: ${name} (${email})`)}`;
+            window.location.href = mailtoUri;
+
+            // Reset form
+            contactForm.reset();
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<span>Send Message</span><i class="fa-solid fa-paper-plane text-xs"></i>`;
+
+            // Hide feedback after 6 seconds
+            setTimeout(() => {
+                if (contactFeedback) contactFeedback.classList.add('hidden');
+            }, 6000);
+        }, 800);
+    });
+}
+
 

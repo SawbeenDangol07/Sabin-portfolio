@@ -1,6 +1,6 @@
 /* Custom background pattern */
 .bg-dot-pattern {
-    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(168, 85, 247, 0.22) 1px, transparent 1px);
     background-size: 28px 28px;
 }
 
@@ -10,16 +10,16 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #090d16;
+    background: #0d0714;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #1e293b;
+    background: #241438;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #10b981;
+    background: #a855f7;
 }
 
 /* Mobile menu toggle class */
@@ -29,11 +29,17 @@
     pointer-events: auto !important;
 }
 
-/* Navbar blur effect on scroll */
+/* Navbar transition and scroll effect */
+#navbar {
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 .nav-scrolled {
-    background-color: rgba(9, 13, 22, 0.92);
+    background-color: rgba(13, 7, 20, 0.94);
     backdrop-filter: blur(16px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+    border-bottom-color: rgba(168, 85, 247, 0.25);
 }
 
 /* Refined Gradient Glow Ring for Profile Avatar */
@@ -41,19 +47,19 @@
     position: relative;
     border-radius: 50%;
     padding: 3px;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.8) 0%, rgba(6, 182, 212, 0.4) 50%, rgba(16, 185, 129, 0.8) 100%);
-    box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.35);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.95) 0%, rgba(236, 72, 153, 0.85) 50%, rgba(56, 189, 248, 0.95) 100%);
+    box-shadow: 0 0 50px -8px rgba(168, 85, 247, 0.45);
     transition: all 0.5s ease;
 }
 
 .avatar-glow-ring:hover {
-    box-shadow: 0 0 65px 0px rgba(16, 185, 129, 0.5);
+    box-shadow: 0 0 65px 0px rgba(236, 72, 153, 0.6);
     transform: scale(1.02);
 }
 
 .avatar-inner {
     border-radius: 50%;
-    background: #090d16;
+    background: #0d0714;
     overflow: hidden;
     width: 100%;
     height: 100%;
@@ -65,17 +71,17 @@
 }
 
 .custom-modal-scroll::-webkit-scrollbar-track {
-    background: rgba(9, 13, 22, 0.5);
+    background: rgba(13, 7, 20, 0.5);
     border-radius: 8px;
 }
 
 .custom-modal-scroll::-webkit-scrollbar-thumb {
-    background: rgba(16, 185, 129, 0.4);
+    background: rgba(168, 85, 247, 0.4);
     border-radius: 8px;
 }
 
 .custom-modal-scroll::-webkit-scrollbar-thumb:hover {
-    background: rgba(16, 185, 129, 0.8);
+    background: rgba(168, 85, 247, 0.8);
 }
 
 /* Modal active visibility state */
@@ -87,4 +93,6 @@
 .modal-active #modal-container {
     transform: scale(1) translateY(0) !important;
 }
+
+
 
