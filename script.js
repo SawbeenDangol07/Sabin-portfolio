@@ -181,7 +181,7 @@ function openProjectModal(card) {
     if (tags && tags.length > 0) {
         tags.forEach(tag => {
             const span = document.createElement('span');
-            span.className = 'px-3 py-1.5 bg-bgMain border border-white/10 rounded-xl font-mono text-xs text-purple-400 font-medium';
+            span.className = 'px-3 py-1.5 bg-bgMain border border-white/10 rounded-xl font-mono text-xs text-blue-400 font-medium';
             span.textContent = tag;
             modalTags.appendChild(span);
         });

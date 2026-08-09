@@ -34,13 +34,13 @@
         theme: {
           extend: {
             colors: {
-              bgMain: "#0d0714",
-              bgSurface: "#160d24",
-              bgCard: "#1f1233",
-              accent: "#a855f7" /* Electric Purple / Violet */,
-              accentHover: "#9333ea",
-              accentCyan: "#ec4899" /* Neon Rose */,
-              accentTeal: "#38bdf8" /* Sky Blue */,
+              bgMain: "#0b1120",
+              bgSurface: "#131c31",
+              bgCard: "#1c2842",
+              accent: "#3B82F6" /* Brand Primary blue-500 */,
+              accentHover: "#2563EB" /* Brand Primary blue-600 */,
+              accentSoft: "#60A5FA" /* Soft Azure Blue blue-400 */,
+              accentCyan: "#38BDF8" /* Sky Blue */,
               textMain: "#94a3b8",
             },
             fontFamily: {
@@ -59,7 +59,7 @@
   >
     <!-- Ambient Radial Glow background -->
     <div
-      class="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-950/40 via-pink-950/20 to-bgMain"
+      class="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-950/50 via-slate-950/30 to-bgMain"
     ></div>
     <div class="fixed inset-0 z-[-1] bg-dot-pattern opacity-20"></div>
 
@@ -177,7 +177,7 @@
         <!-- Left Content -->
         <div class="flex-1 text-center lg:text-left">
           <p
-            class="font-mono text-purple-400 text-sm md:text-base font-semibold mb-2"
+            class="font-mono text-blue-400 text-sm md:text-base font-semibold mb-2"
           >
             Hello! I'm
           </p>
@@ -186,7 +186,7 @@
           >
             Sabin
             <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-pink-400 to-sky-400"
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-400 to-indigo-500"
               >Dangol</span
             >
           </h1>
@@ -207,7 +207,7 @@
           >
             <a
               href="#contact"
-              class="px-6 py-3 bg-accent text-white font-semibold rounded-xl hover:bg-purple-600 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all duration-300 flex items-center gap-2"
+              class="px-6 py-3 bg-accent text-white font-semibold rounded-xl hover:bg-accentHover shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all duration-300 flex items-center gap-2"
             >
               Contact Me
             </a>
@@ -245,7 +245,7 @@
         <!-- Right Content: Code Mockup Window -->
         <div class="w-full lg:w-[480px] shrink-0 flex justify-center">
           <div
-            class="relative bg-[#160d24] border border-white/10 rounded-2xl p-5 sm:p-6 font-mono text-xs sm:text-sm shadow-2xl overflow-hidden w-full max-w-lg group hover:border-accent/40 transition-colors"
+            class="relative bg-bgSurface border border-white/10 rounded-2xl p-5 sm:p-6 font-mono text-xs sm:text-sm shadow-2xl overflow-hidden w-full max-w-lg group hover:border-accent/40 transition-colors"
           >
             <!-- Window Control Header -->
             <div
@@ -268,29 +268,29 @@
             <div class="space-y-2 text-slate-300 leading-relaxed">
               <p class="text-slate-500">// Software & ML Engineer</p>
               <p>
-                <span class="text-purple-400 font-semibold">const</span>
-                <span class="text-pink-400">developer</span> = {
+                <span class="text-blue-400 font-semibold">const</span>
+                <span class="text-sky-300">developer</span> = {
               </p>
               <p class="pl-4">
                 <span class="text-sky-300">name</span>:
-                <span class="text-purple-300">'Sabin Dangol'</span>,
+                <span class="text-blue-300">'Sabin Dangol'</span>,
               </p>
               <p class="pl-4">
                 <span class="text-sky-300">skills</span>: [
-                <span class="text-purple-300">'React'</span>,
-                <span class="text-purple-300">'Node.js'</span>,
-                <span class="text-purple-300">'Python'</span>
+                <span class="text-blue-300">'React'</span>,
+                <span class="text-blue-300">'Node.js'</span>,
+                <span class="text-blue-300">'Python'</span>
                 ],
               </p>
               <p class="pl-4">
                 <span class="text-sky-300">focuses</span>: [
-                <span class="text-purple-300">'Full-Stack'</span>,
-                <span class="text-purple-300">'AI & Data'</span>
+                <span class="text-blue-300">'Full-Stack'</span>,
+                <span class="text-blue-300">'AI & Data'</span>
                 ],
               </p>
               <p class="pl-4">
                 <span class="text-sky-300">learning</span>:
-                <span class="text-purple-300">'Always'</span>
+                <span class="text-blue-300">'Always'</span>
               </p>
               <p>};</p>
             </div>
@@ -321,7 +321,7 @@
               <h3
                 class="flex items-center gap-2 text-lg font-bold text-white mb-3"
               >
-                <i class="fa-regular fa-file-lines text-purple-400"></i> Bio
+                <i class="fa-regular fa-file-lines text-blue-400"></i> Bio
               </h3>
               <p class="text-slate-300 leading-relaxed text-sm md:text-base">
                 Software engineering student with a passion for creating
@@ -343,7 +343,7 @@
                     class="flex items-center justify-between text-base font-bold text-white mb-3"
                   >
                     <span class="flex items-center gap-2">
-                      <i class="fa-solid fa-graduation-cap text-purple-400"></i>
+                      <i class="fa-solid fa-graduation-cap text-blue-400"></i>
                       Education
                     </span>
                     <span
@@ -360,7 +360,7 @@
                           BIT (Bachelor in Info Tech)
                         </h5>
                         <span
-                          class="px-2 py-0.5 bg-purple-500/10 border border-purple-500/30 text-purple-400 text-[10px] font-mono rounded-full font-medium shrink-0"
+                          class="px-2 py-0.5 bg-blue-500/10 border border-blue-400/30 text-blue-400 text-[10px] font-mono rounded-full font-medium shrink-0"
                           >In Progress</span
                         >
                       </div>
@@ -412,7 +412,7 @@
                   <h4
                     class="flex items-center gap-2 text-base font-bold text-white mb-3"
                   >
-                    <i class="fa-solid fa-briefcase text-purple-400"></i>
+                    <i class="fa-solid fa-briefcase text-blue-400"></i>
                     Experience & Focus
                   </h4>
                   <div class="space-y-3">
@@ -448,7 +448,7 @@
             >
               <!-- Clean Profile Photo Container -->
               <div
-                class="w-36 h-36 rounded-full overflow-hidden border-2 border-purple-500/30 shadow-xl mb-3 group-hover:border-accent transition-colors"
+                class="w-36 h-36 rounded-full overflow-hidden border-2 border-blue-500/30 shadow-xl mb-3 group-hover:border-accent transition-colors"
               >
                 <img
                   src="assets/images/profile-placeholder.png"
@@ -489,7 +489,7 @@
               <a
                 href="assets/resume/sabin-dangol-cv.pdf"
                 target="_blank"
-                class="w-full py-3 bg-accent text-white font-semibold rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:bg-purple-600 transition-all duration-300 flex items-center justify-center gap-2 text-sm font-mono"
+                class="w-full py-3 bg-accent text-white font-semibold rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:bg-accentHover transition-all duration-300 flex items-center justify-center gap-2 text-sm font-mono"
               >
                 <i class="fa-solid fa-download"></i> Download Resume
               </a>
@@ -511,11 +511,11 @@
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Frontend -->
           <div
-            class="bg-bgSurface p-6 rounded-2xl border border-white/5 hover:border-purple-500/35 transition-all duration-300 shadow-xl space-y-6 group"
+            class="bg-bgSurface p-6 rounded-2xl border border-white/5 hover:border-blue-500/35 transition-all duration-300 shadow-xl space-y-6 group"
           >
             <div class="flex items-center gap-3">
               <div
-                class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl group-hover:scale-105 transition-transform"
+                class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-400/30 flex items-center justify-center text-blue-400 text-xl group-hover:scale-105 transition-transform"
               >
                 <i class="fa-solid fa-laptop-code"></i>
               </div>
@@ -528,28 +528,28 @@
             </div>
             <div class="flex flex-wrap gap-2.5">
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-purple-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-blue-400/40 transition-colors"
               >
                 <i class="devicon-react-original colored text-base"></i> React
               </span>
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-purple-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-blue-400/40 transition-colors"
               >
                 <i class="devicon-javascript-plain colored text-base"></i>
                 JavaScript
               </span>
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-purple-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-blue-400/40 transition-colors"
               >
                 <i class="devicon-html5-plain colored text-base"></i> HTML5
               </span>
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-purple-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-blue-400/40 transition-colors"
               >
                 <i class="devicon-css3-plain colored text-base"></i> CSS3
               </span>
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-purple-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-blue-400/40 transition-colors"
               >
                 <i class="devicon-tailwindcss-original colored text-base"></i>
                 Tailwind CSS
@@ -559,11 +559,11 @@
 
           <!-- Backend -->
           <div
-            class="bg-bgSurface p-6 rounded-2xl border border-white/5 hover:border-pink-500/35 transition-all duration-300 shadow-xl space-y-6 group"
+            class="bg-bgSurface p-6 rounded-2xl border border-white/5 hover:border-sky-500/35 transition-all duration-300 shadow-xl space-y-6 group"
           >
             <div class="flex items-center gap-3">
               <div
-                class="w-10 h-10 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-xl group-hover:scale-105 transition-transform"
+                class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-xl group-hover:scale-105 transition-transform"
               >
                 <i class="fa-solid fa-server"></i>
               </div>
@@ -576,12 +576,12 @@
             </div>
             <div class="flex flex-wrap gap-2.5">
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-pink-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-sky-500/40 transition-colors"
               >
                 <i class="devicon-nodejs-plain colored text-base"></i> Node.js
               </span>
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-pink-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-sky-500/40 transition-colors"
               >
                 <i
                   class="devicon-express-original text-base text-slate-200"
@@ -589,26 +589,25 @@
                 Express
               </span>
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-pink-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-sky-500/40 transition-colors"
               >
                 <i class="devicon-mongodb-plain colored text-base"></i> MongoDB
               </span>
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-pink-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-sky-500/40 transition-colors"
               >
-                <i class="fa-solid fa-gears text-pink-400 text-sm"></i> REST
-                APIs
+                <i class="fa-solid fa-gears text-sky-400 text-sm"></i> REST APIs
               </span>
             </div>
           </div>
 
           <!-- Languages & Machine Learning -->
           <div
-            class="bg-bgSurface p-6 rounded-2xl border border-white/5 hover:border-sky-500/35 transition-all duration-300 shadow-xl space-y-6 group"
+            class="bg-bgSurface p-6 rounded-2xl border border-white/5 hover:border-indigo-500/35 transition-all duration-300 shadow-xl space-y-6 group"
           >
             <div class="flex items-center gap-3">
               <div
-                class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-xl group-hover:scale-105 transition-transform"
+                class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl group-hover:scale-105 transition-transform"
               >
                 <i class="fa-solid fa-code"></i>
               </div>
@@ -619,30 +618,30 @@
             </div>
             <div class="flex flex-wrap gap-2.5">
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-sky-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-indigo-500/40 transition-colors"
               >
                 <i class="devicon-javascript-plain colored text-base"></i>
                 JavaScript
               </span>
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-sky-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-indigo-500/40 transition-colors"
               >
                 <i class="devicon-java-plain colored text-base"></i> Java
               </span>
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-sky-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-indigo-500/40 transition-colors"
               >
                 <i class="devicon-cplusplus-plain colored text-base"></i> C++
               </span>
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-sky-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-indigo-500/40 transition-colors"
               >
                 <i class="devicon-csharp-plain colored text-base"></i> C#
               </span>
               <span
-                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-sky-500/40 transition-colors"
+                class="px-3 py-2 bg-bgMain border border-white/10 rounded-xl text-xs font-mono text-slate-200 flex items-center gap-2 hover:border-indigo-500/40 transition-colors"
               >
-                <i class="fa-solid fa-brain text-sky-400 text-sm"></i>
+                <i class="fa-solid fa-brain text-indigo-400 text-sm"></i>
                 Machine Learning
               </span>
             </div>
@@ -663,7 +662,7 @@
         <div class="max-w-md mx-auto">
           <!-- Project 1: Mental Health Prediction System -->
           <div
-            class="project-card group relative bg-bgSurface rounded-xl p-5 border border-purple-500/30 hover:border-pink-500/60 transition-all duration-300 hover:-translate-y-1.5 flex flex-col h-full shadow-[0_4px_20px_rgba(168,85,247,0.08)] hover:shadow-[0_0_30px_rgba(236,72,153,0.25)] cursor-pointer"
+            class="project-card group relative bg-bgSurface rounded-xl p-5 border border-blue-500/30 hover:border-sky-400/60 transition-all duration-300 hover:-translate-y-1.5 flex flex-col h-full shadow-[0_4px_20px_rgba(59,130,246,0.08)] hover:shadow-[0_0_30px_rgba(56,189,248,0.25)] cursor-pointer"
             data-title="Mental Health Prediction System"
             data-subtitle="AI & Machine Learning HealthTech Solution"
             data-category="Machine Learning & AI"
@@ -677,7 +676,7 @@
           >
             <div class="flex justify-between items-center mb-3.5">
               <div
-                class="w-10 h-10 rounded-lg bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-accent text-lg group-hover:scale-105 transition-transform"
+                class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-400/30 flex items-center justify-center text-blue-400 text-lg group-hover:scale-105 transition-transform"
               >
                 <i class="fa-solid fa-brain"></i>
               </div>
@@ -703,7 +702,7 @@
 
             <!-- Project Image Preview Banner -->
             <div
-              class="mb-3.5 rounded-lg overflow-hidden border border-white/10 bg-bgMain h-40 sm:h-44 relative group-hover:border-purple-500/40 transition-colors"
+              class="mb-3.5 rounded-lg overflow-hidden border border-white/10 bg-bgMain h-40 sm:h-44 relative group-hover:border-blue-400/40 transition-colors"
             >
               <img
                 src="assets/project-img/image.png"
@@ -714,10 +713,10 @@
 
             <div class="mb-2">
               <span
-                class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 font-mono text-[10px]"
+                class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-400 font-mono text-[10px]"
               >
                 <span
-                  class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"
+                  class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"
                 ></span>
                 Featured Project
               </span>
@@ -738,15 +737,15 @@
 
             <div class="flex flex-wrap gap-1.5 mt-auto">
               <span
-                class="px-2 py-0.5 bg-bgMain border border-white/10 rounded-md font-mono text-[11px] text-purple-400"
+                class="px-2 py-0.5 bg-bgMain border border-white/10 rounded-md font-mono text-[11px] text-blue-400"
                 >Machine Learning</span
               >
               <span
-                class="px-2 py-0.5 bg-bgMain border border-white/10 rounded-md font-mono text-[11px] text-purple-400"
+                class="px-2 py-0.5 bg-bgMain border border-white/10 rounded-md font-mono text-[11px] text-blue-400"
                 >Python</span
               >
               <span
-                class="px-2 py-0.5 bg-bgMain border border-white/10 rounded-md font-mono text-[11px] text-purple-400"
+                class="px-2 py-0.5 bg-bgMain border border-white/10 rounded-md font-mono text-[11px] text-blue-400"
                 >React</span
               >
             </div>
@@ -757,7 +756,7 @@
               <a
                 href="https://mental-health-prediction-system-orcin.vercel.app/"
                 target="_blank"
-                class="card-link inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-medium hover:bg-accent hover:text-white hover:border-accent transition-all"
+                class="card-link inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-400/30 text-blue-400 text-xs font-medium hover:bg-accentHover hover:text-white hover:border-accentHover transition-all"
               >
                 <i class="fa-solid fa-globe text-xs"></i> Live Website
                 <i
@@ -787,7 +786,7 @@
         <div class="grid sm:grid-cols-2 max-w-4xl gap-8">
           <!-- Certificate 1 -->
           <div
-            class="group relative bg-bgSurface rounded-2xl overflow-hidden border border-white/10 hover:border-purple-500/50 transition-all duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] flex flex-col"
+            class="group relative bg-bgSurface rounded-2xl overflow-hidden border border-white/10 hover:border-blue-500/50 transition-all duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] flex flex-col"
           >
             <div class="aspect-video overflow-hidden bg-bgMain relative">
               <img
@@ -829,7 +828,7 @@
 
           <!-- Certificate 2 -->
           <div
-            class="group relative bg-bgSurface rounded-2xl overflow-hidden border border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(236,72,153,0.2)] flex flex-col"
+            class="group relative bg-bgSurface rounded-2xl overflow-hidden border border-white/10 hover:border-sky-500/50 transition-all duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(56,189,248,0.2)] flex flex-col"
           >
             <div class="aspect-video overflow-hidden bg-bgMain relative">
               <img
@@ -843,11 +842,11 @@
                 <div class="flex justify-between items-start mb-2">
                   <div>
                     <span
-                      class="text-xs font-mono text-pink-400 font-semibold uppercase tracking-wider"
+                      class="text-xs font-mono text-sky-400 font-semibold uppercase tracking-wider"
                       >Coursera Verified</span
                     >
                     <h3
-                      class="text-lg font-bold text-white group-hover:text-pink-400 transition-colors"
+                      class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors"
                     >
                       Specialization Certificate
                     </h3>
@@ -855,7 +854,7 @@
                   <a
                     href="assets/certificates/Coursera%20JKHB7AHGQJMP.pdf"
                     target="_blank"
-                    class="text-slate-400 hover:text-pink-400 transition-colors p-1"
+                    class="text-slate-400 hover:text-sky-400 transition-colors p-1"
                     title="View PDF"
                     aria-label="View PDF"
                   >
@@ -914,7 +913,7 @@
                     name="name"
                     required
                     placeholder="Sabin Dangol"
-                    class="w-full pl-10 pr-4 py-3 bg-bgMain border border-white/10 rounded-xl text-slate-200 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder:text-slate-600"
+                    class="w-full pl-10 pr-4 py-3 bg-bgMain border border-white/10 rounded-xl text-slate-200 text-sm focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 transition-all placeholder:text-slate-600"
                   />
                 </div>
               </div>
@@ -938,7 +937,7 @@
                     name="email"
                     required
                     placeholder="you@example.com"
-                    class="w-full pl-10 pr-4 py-3 bg-bgMain border border-white/10 rounded-xl text-slate-200 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder:text-slate-600"
+                    class="w-full pl-10 pr-4 py-3 bg-bgMain border border-white/10 rounded-xl text-slate-200 text-sm focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 transition-all placeholder:text-slate-600"
                   />
                 </div>
               </div>
@@ -963,7 +962,7 @@
                   id="contact-subject"
                   name="subject"
                   placeholder="Project Inquiry / Job Opportunity"
-                  class="w-full pl-10 pr-4 py-3 bg-bgMain border border-white/10 rounded-xl text-slate-200 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder:text-slate-600"
+                  class="w-full pl-10 pr-4 py-3 bg-bgMain border border-white/10 rounded-xl text-slate-200 text-sm focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 transition-all placeholder:text-slate-600"
                 />
               </div>
             </div>
@@ -988,7 +987,7 @@
                   rows="4"
                   required
                   placeholder="Hello Sabin, I'd like to discuss a project..."
-                  class="w-full pl-10 pr-4 py-3 bg-bgMain border border-white/10 rounded-xl text-slate-200 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder:text-slate-600 resize-none"
+                  class="w-full pl-10 pr-4 py-3 bg-bgMain border border-white/10 rounded-xl text-slate-200 text-sm focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 transition-all placeholder:text-slate-600 resize-none"
                 ></textarea>
               </div>
             </div>
@@ -997,7 +996,7 @@
             <button
               type="submit"
               id="contact-submit-btn"
-              class="w-full py-3.5 bg-accent text-white font-mono text-sm font-bold rounded-xl shadow-[0_0_25px_rgba(168,85,247,0.4)] hover:bg-purple-600 hover:shadow-[0_0_35px_rgba(168,85,247,0.6)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+              class="w-full py-3.5 bg-accent text-white font-mono text-sm font-bold rounded-xl shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:bg-accentHover hover:shadow-[0_0_35px_rgba(37,99,235,0.6)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>Send Message</span>
               <i class="fa-solid fa-paper-plane text-xs"></i>
@@ -1016,14 +1015,14 @@
           <a
             href="https://github.com/SawbeenDangol07"
             target="_blank"
-            class="w-12 h-12 flex items-center justify-center rounded-xl bg-bgSurface border border-white/10 text-slate-400 hover:text-accent hover:border-purple-500/40 hover:-translate-y-1 transition-all duration-200 text-lg"
+            class="w-12 h-12 flex items-center justify-center rounded-xl bg-bgSurface border border-white/10 text-slate-400 hover:text-accent hover:border-blue-500/40 hover:-translate-y-1 transition-all duration-200 text-lg"
             aria-label="GitHub"
             ><i class="fa-brands fa-github"></i
           ></a>
           <a
             href="#"
             target="_blank"
-            class="w-12 h-12 flex items-center justify-center rounded-xl bg-bgSurface border border-white/10 text-slate-400 hover:text-pink-400 hover:border-pink-500/40 hover:-translate-y-1 transition-all duration-200 text-lg"
+            class="w-12 h-12 flex items-center justify-center rounded-xl bg-bgSurface border border-white/10 text-slate-400 hover:text-sky-400 hover:border-sky-500/40 hover:-translate-y-1 transition-all duration-200 text-lg"
             aria-label="LinkedIn"
             ><i class="fa-brands fa-linkedin-in"></i
           ></a>
@@ -1062,12 +1061,12 @@
       <!-- Glassmorphism Card Container -->
       <div
         id="modal-container"
-        class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-bgSurface/90 backdrop-blur-2xl border border-purple-500/30 rounded-3xl p-6 sm:p-8 shadow-[0_0_50px_rgba(168,85,247,0.3)] transform scale-95 transition-all duration-300 z-10 custom-modal-scroll"
+        class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-bgSurface/90 backdrop-blur-2xl border border-blue-500/30 rounded-3xl p-6 sm:p-8 shadow-[0_0_50px_rgba(59,130,246,0.3)] transform scale-95 transition-all duration-300 z-10 custom-modal-scroll"
       >
         <!-- Close Button -->
         <button
           id="modal-close"
-          class="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-purple-500/20 hover:border-purple-500/50 hover:text-purple-400 text-slate-400 flex items-center justify-center transition-all duration-200 focus:outline-none cursor-pointer"
+          class="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-blue-500/20 hover:border-blue-500/50 hover:text-blue-400 text-slate-400 flex items-center justify-center transition-all duration-200 focus:outline-none cursor-pointer"
           aria-label="Close modal"
         >
           <i class="fa-solid fa-xmark text-lg"></i>
@@ -1076,7 +1075,7 @@
         <!-- Header -->
         <div class="mb-5 pr-10">
           <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 font-mono text-xs mb-3"
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-400 font-mono text-xs mb-3"
             id="modal-category"
           >
             <i class="fa-solid fa-code text-xs"></i> <span>Category</span>
@@ -1117,7 +1116,7 @@
           class="mb-6 bg-bgMain/70 border border-white/5 rounded-2xl p-4 sm:p-5"
         >
           <h4
-            class="text-xs font-mono uppercase tracking-wider text-purple-400 mb-3 flex items-center gap-2"
+            class="text-xs font-mono uppercase tracking-wider text-blue-400 mb-3 flex items-center gap-2"
           >
             <i class="fa-solid fa-star text-xs"></i> Key Highlights & Features
           </h4>
@@ -1155,7 +1154,7 @@
             id="modal-github-link"
             href="#"
             target="_blank"
-            class="px-5 py-2.5 rounded-xl border border-white/10 bg-bgMain text-slate-300 font-semibold hover:border-purple-500/40 hover:text-purple-400 transition-all flex items-center gap-2 cursor-pointer hidden"
+            class="px-5 py-2.5 rounded-xl border border-white/10 bg-bgMain text-slate-300 font-semibold hover:border-blue-500/40 hover:text-blue-400 transition-all flex items-center gap-2 cursor-pointer hidden"
           >
             <i class="fa-brands fa-github text-base"></i> GitHub Code
           </a>
@@ -1163,7 +1162,7 @@
             id="modal-demo-link"
             href="#"
             target="_blank"
-            class="px-6 py-2.5 rounded-xl bg-accent text-white font-bold hover:bg-purple-600 hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all duration-300 flex items-center gap-2 cursor-pointer hidden"
+            class="px-6 py-2.5 rounded-xl bg-accent text-white font-bold hover:bg-accentHover hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] transition-all duration-300 flex items-center gap-2 cursor-pointer hidden"
           >
             <i class="fa-solid fa-globe text-base"></i> Live Website
             <i
@@ -1174,7 +1173,7 @@
             id="modal-open-link"
             href="#"
             target="_blank"
-            class="px-6 py-2.5 rounded-xl bg-accent text-white font-bold hover:bg-purple-600 hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all duration-300 flex items-center gap-2 cursor-pointer hidden"
+            class="px-6 py-2.5 rounded-xl bg-accent text-white font-bold hover:bg-accentHover hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] transition-all duration-300 flex items-center gap-2 cursor-pointer hidden"
           >
             <i class="fa-brands fa-github text-base"></i> Open Project
             <i
