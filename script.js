@@ -93,6 +93,8 @@ const modalTags = document.getElementById('modal-tags');
 const modalOpenLink = document.getElementById('modal-open-link');
 const modalDemoLink = document.getElementById('modal-demo-link');
 const modalGithubLink = document.getElementById('modal-github-link');
+const modalGithubFe = document.getElementById('modal-github-fe');
+const modalGithubBe = document.getElementById('modal-github-be');
 
 // Function to open modal with project data
 function openProjectModal(card) {
@@ -102,6 +104,8 @@ function openProjectModal(card) {
     const image = card.dataset.image || '';
     const fullDesc = card.dataset.fullDesc || card.dataset.description || '';
     const githubUrl = card.dataset.github || '';
+    const githubFeUrl = card.dataset.githubFe || card.dataset.githubFrontend || '';
+    const githubBeUrl = card.dataset.githubBe || card.dataset.githubBackend || '';
     const demoUrl = card.dataset.demo || '';
     
     let features = [];
@@ -130,28 +134,51 @@ function openProjectModal(card) {
 
     // Handle Modal Links
     const hasDemo = demoUrl && demoUrl !== '#';
-    const hasGithub = githubUrl && githubUrl !== '#';
+    const hasSingleGithub = githubUrl && githubUrl !== '#';
+    const hasFeGithub = githubFeUrl && githubFeUrl !== '#';
+    const hasBeGithub = githubBeUrl && githubBeUrl !== '#';
 
-    if (modalDemoLink && modalGithubLink) {
+    // Demo Link
+    if (modalDemoLink) {
         if (hasDemo) {
             modalDemoLink.href = demoUrl;
             modalDemoLink.classList.remove('hidden');
         } else {
             modalDemoLink.classList.add('hidden');
         }
+    }
 
-        if (hasGithub) {
+    // Single GitHub Repo Link
+    if (modalGithubLink) {
+        if (hasSingleGithub && !hasFeGithub && !hasBeGithub) {
             modalGithubLink.href = githubUrl;
             modalGithubLink.classList.remove('hidden');
         } else {
             modalGithubLink.classList.add('hidden');
         }
-
-        if (modalOpenLink) modalOpenLink.classList.add('hidden');
-    } else if (modalOpenLink) {
-        modalOpenLink.href = hasDemo ? demoUrl : (hasGithub ? githubUrl : '#');
-        modalOpenLink.classList.remove('hidden');
     }
+
+    // Dual Frontend GitHub Repo Link
+    if (modalGithubFe) {
+        if (hasFeGithub) {
+            modalGithubFe.href = githubFeUrl;
+            modalGithubFe.classList.remove('hidden');
+        } else {
+            modalGithubFe.classList.add('hidden');
+        }
+    }
+
+    // Dual Backend GitHub Repo Link
+    if (modalGithubBe) {
+        if (hasBeGithub) {
+            modalGithubBe.href = githubBeUrl;
+            modalGithubBe.classList.remove('hidden');
+        } else {
+            modalGithubBe.classList.add('hidden');
+        }
+    }
+
+    if (modalOpenLink) modalOpenLink.classList.add('hidden');
 
     // Handle Banner Image
     if (image) {
