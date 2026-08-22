@@ -254,12 +254,12 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Contact Form Submission Handler
+// Contact Form Submission Handler with Web3Forms
 const contactForm = document.getElementById('contact-form');
 const contactFeedback = document.getElementById('contact-feedback');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         const name = document.getElementById('contact-name').value.trim();
@@ -280,27 +280,56 @@ if (contactForm) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = `<span>Sending...</span><i class="fa-solid fa-spinner animate-spin text-xs"></i>`;
 
-        setTimeout(() => {
-            // Display success message
-            if (contactFeedback) {
-                contactFeedback.className = 'p-3.5 rounded-xl text-center text-xs font-mono border bg-emerald-500/10 border-emerald-500/30 text-emerald-400 block';
-                contactFeedback.textContent = '✨ Thank you! Your message has been sent. I will get back to you shortly!';
-            }
-            
-            // Trigger mailto fallback so user can send direct email
-            const mailtoUri = `mailto:sabindangol440@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hi Sabin,\n\n${message}\n\nFrom: ${name} (${email})`)}`;
-            window.location.href = mailtoUri;
+        if (contactFeedback) {
+            contactFeedback.classList.add('hidden');
+        }
 
-            // Reset form
-            contactForm.reset();
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: '8290e42c-4cc7-4cb8-a27b-7e066c8ccb86',
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message,
+                    from_name: `${name} (Portfolio Inquiry)`
+                })
+            });
+
+            const result = await response.json();
+
+            if (response.status === 200 && result.success) {
+                if (contactFeedback) {
+                    contactFeedback.className = 'p-3.5 rounded-xl text-center text-xs font-mono border bg-emerald-500/10 border-emerald-500/30 text-emerald-400 block';
+                    contactFeedback.textContent = `✨ Thank you, ${name}! Your message has been sent successfully. I will get back to you soon!`;
+                }
+                contactForm.reset();
+            } else {
+                if (contactFeedback) {
+                    contactFeedback.className = 'p-3.5 rounded-xl text-center text-xs font-mono border bg-rose-500/10 border-rose-500/30 text-rose-400 block';
+                    contactFeedback.textContent = result.message || 'Something went wrong. Please try again or email directly.';
+                }
+            }
+        } catch (error) {
+            console.error('Web3Forms submission error:', error);
+            if (contactFeedback) {
+                contactFeedback.className = 'p-3.5 rounded-xl text-center text-xs font-mono border bg-rose-500/10 border-rose-500/30 text-rose-400 block';
+                contactFeedback.textContent = 'Unable to send message right now. Please email me at sabindangol440@gmail.com.';
+            }
+        } finally {
             submitBtn.disabled = false;
             submitBtn.innerHTML = `<span>Send Message</span><i class="fa-solid fa-paper-plane text-xs"></i>`;
 
-            // Hide feedback after 6 seconds
+            // Auto-hide feedback after 8 seconds
             setTimeout(() => {
                 if (contactFeedback) contactFeedback.classList.add('hidden');
-            }, 6000);
-        }, 800);
+            }, 8000);
+        }
     });
 }
 
